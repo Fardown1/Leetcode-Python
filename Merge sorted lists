@@ -1,0 +1,9 @@
+
+list3 = []
+x= len(list1)
+y= len(list2)
+for i in range(x):
+    list3.append(list1[i])
+for j in range(y):
+    list3.append(list2[j])
+print(sorted(list3))
