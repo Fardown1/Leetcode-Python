@@ -1,0 +1,15 @@
+class Solution(object):
+    def plusOne(self, digits):
+        n = len(digits)
+        carry = 1
+        num_list = []
+
+        for i in range(n - 1, -1, -1):
+            total = digits[i] + carry
+            num_list.insert(0, total % 10)
+            carry = total // 10
+
+        if carry:
+            num_list.insert(0, carry)
+
+        return num_list
