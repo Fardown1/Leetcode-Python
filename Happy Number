@@ -1,1 +1,18 @@
+class Solution(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        num_list = [int(d) for d in str(n)]
 
+        while True:
+            total = sum(x**2 for x in num_list)
+            num_list = [int(d) for d in str(total)]
+
+            if total == 1:
+                return True
+                break
+            elif total == 4:
+                return False
+                break
