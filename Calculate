@@ -1,0 +1,28 @@
+s = "3+5/2"
+sol = 0
+t= 0
+sembols = ['+', '-', '*', '/']
+for i in range(len(s)):
+    for j in range(len(sembols)):
+        if s[i] == sembols[j]:
+            t += 1
+            if t == 1:
+                if s[i] == '*':
+                    sol += int(s[i-1])*int(s[i+1])
+                if s[i] == '/':
+                    sol += int(s[i-1])/int(s[i+1])
+                if s[i] == '+':
+                    sol += int(s[i-1])+int(s[i+1])
+                if s[i] == '-':
+                    sol += int(s[i-1])-int(s[i+1])
+            else:
+                if s[i] == '*':
+                    sol += int(s[i-1])*int(s[i+1])
+                    if s[i] == '+':
+                        sol += int(s[i-1])
+                if s[i] == '/':
+                    sol == 0
+                    if s[i] == '+':
+                        sol == 0
+print(t)
+print(sol)
