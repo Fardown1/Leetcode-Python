@@ -1,0 +1,19 @@
+class Solution(object):
+    def largestTriangleArea(self, points):
+        """
+        :type points: List[List[int]]
+        :rtype: float
+        """
+        x_list = []
+        y_list = []
+        for i in range(len(points)):
+            points2 = points[i]
+            for j in range(len(points2)):
+                x = points2[0]
+                x_list.append(x)
+                y = points2[1]
+                y_list.append(y)
+        taban = float(max(x_list)-min(x_list))
+        yuk = float(max(y_list)-min(y_list))
+        alan = (taban*yuk)/2
+        return alan
